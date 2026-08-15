@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FunRoom Multiplayer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="firebase.js"></script>
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>🎮 FunRoom Multiplayer</h1>
+    <p>Chat • Draw • Play Together</p>
+</header>
+
+<section class="room-section">
+
+    <input
+        type="text"
+        id="username"
+        placeholder="Enter Your Name">
+
+    <input
+        type="text"
+        id="roomCode"
+        placeholder="Room Code">
+
+    <button id="createRoomBtn">
+        Create Room
+    </button>
+
+    <button id="joinRoomBtn">
+        Join Room
+    </button>
+
+</section>
+
+<div class="container">
+
+    <!-- CHAT -->
+
+    <div class="card">
+
+        <h2>💬 Chat</h2>
+
+        <div id="chatMessages"></div>
+
+        <div class="chat-input">
+
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="Type message...">
+
+            <button id="sendBtn">
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- DRAWING BOARD -->
+
+    <div class="card">
+
+        <h2>🎨 Drawing Board</h2>
+
+        <canvas
+            id="drawingCanvas"
+            width="600"
+            height="400">
+        </canvas>
+
+        <button id="clearCanvas">
+            Clear Canvas
+        </button>
+
+    </div>
+
+</div>
+
+<!-- GAMES -->
+
+<section class="games">
+
+    <div class="card">
+
+        <h2>❌ Tic Tac Toe ⭕</h2>
+
+        <div id="ticTacToe">
+
+            <button class="cell"></button>
+            <button class="cell"></button>
+            <button class="cell"></button>
+
+            <button class="cell"></button>
+            <button class="cell"></button>
+            <button class="cell"></button>
+
+            <button class="cell"></button>
+            <button class="cell"></button>
+            <button class="cell"></button>
+
+        </div>
+
+        <button id="resetGame">
+            Reset Game
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        <h2>🎲 Truth Or Dare</h2>
+
+        <div id="todQuestion">
+
+            Click below to start!
+
+        </div>
+
+        <button id="truthBtn">
+            Truth
+        </button>
+
+        <button id="dareBtn">
+            Dare
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ONLINE USERS -->
+
+<section class="card users">
+
+    <h2>🟢 Online Users</h2>
+
+    <ul id="userList"></ul>
+
+</section>
+
+<footer>
+
+    <p>
+        Built with ❤️ for Friends
+    </p>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,390 @@
+/* =========================
+   FUNROOM MULTIPLAYER UI
+   style.css
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #312e81
+    );
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Animated Background */
+
+body::before{
+    content:'';
+    position:fixed;
+    width:200%;
+    height:200%;
+    top:-50%;
+    left:-50%;
+    background:
+    radial-gradient(circle,#6366f155 2px,transparent 2px);
+    background-size:40px 40px;
+    animation:moveBg 25s linear infinite;
+    z-index:-1;
+}
+
+@keyframes moveBg{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(120px,120px);
+    }
+}
+
+/* Header */
+
+header{
+    text-align:center;
+    padding:30px 20px;
+}
+
+header h1{
+    font-size:3rem;
+    font-weight:700;
+    background:linear-gradient(
+        90deg,
+        #60a5fa,
+        #c084fc,
+        #f472b6
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+header p{
+    margin-top:10px;
+    opacity:.8;
+}
+
+/* Room Section */
+
+.room-section{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.room-section input{
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    outline:none;
+    min-width:220px;
+    background:#ffffff15;
+    color:white;
+    backdrop-filter:blur(10px);
+}
+
+.room-section input::placeholder{
+    color:#d1d5db;
+}
+
+.room-section button{
+    padding:14px 24px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+    background:#6366f1;
+    color:white;
+}
+
+.room-section button:hover{
+    transform:translateY(-3px);
+    background:#4f46e5;
+}
+
+/* Layout */
+
+.container{
+    width:95%;
+    max-width:1400px;
+    margin:30px auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+/* Cards */
+
+.card{
+    background:#ffffff10;
+    backdrop-filter:blur(18px);
+    border:1px solid #ffffff20;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.card h2{
+    margin-bottom:15px;
+}
+
+/* Chat */
+
+#chatMessages{
+    height:350px;
+    overflow-y:auto;
+    border-radius:12px;
+    padding:12px;
+    background:#00000020;
+}
+
+.message{
+    margin-bottom:10px;
+    padding:10px;
+    border-radius:10px;
+    background:#6366f125;
+}
+
+.chat-input{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.chat-input input{
+    flex:1;
+    padding:12px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:#ffffff15;
+    color:white;
+}
+
+.chat-input button{
+    padding:12px 18px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    background:#22c55e;
+    color:white;
+    font-weight:600;
+}
+
+.chat-input button:hover{
+    background:#16a34a;
+}
+
+/* Drawing */
+
+#drawingCanvas{
+    width:100%;
+    background:white;
+    border-radius:15px;
+    cursor:crosshair;
+}
+
+#clearCanvas{
+    margin-top:15px;
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:#ef4444;
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+}
+
+#clearCanvas:hover{
+    background:#dc2626;
+}
+
+/* Games */
+
+.games{
+    width:95%;
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+/* Tic Tac Toe */
+
+#ticTacToe{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+.cell{
+    height:90px;
+    border:none;
+    border-radius:15px;
+    background:#ffffff15;
+    color:white;
+    font-size:2rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.cell:hover{
+    background:#6366f130;
+    transform:scale(1.05);
+}
+
+#resetGame{
+    width:100%;
+    margin-top:15px;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:#f59e0b;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* Truth or Dare */
+
+#todQuestion{
+    min-height:120px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:#00000020;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+#truthBtn,
+#dareBtn{
+    width:48%;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+    color:white;
+}
+
+#truthBtn{
+    background:#3b82f6;
+}
+
+#dareBtn{
+    background:#ec4899;
+}
+
+#truthBtn:hover{
+    background:#2563eb;
+}
+
+#dareBtn:hover{
+    background:#db2777;
+}
+
+/* Online Users */
+
+.users{
+    width:95%;
+    max-width:1400px;
+    margin:25px auto;
+}
+
+#userList{
+    list-style:none;
+}
+
+#userList li{
+    padding:12px;
+    margin-bottom:10px;
+    border-radius:12px;
+    background:#ffffff10;
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:25px;
+    opacity:.8;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#6366f1;
+    border-radius:10px;
+}
+
+/* Animations */
+
+.card{
+    animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .games{
+        grid-template-columns:1fr;
+    }
+
+    header h1{
+        font-size:2rem;
+    }
+
+    .room-section{
+        flex-direction:column;
+    }
+
+    .room-section input,
+    .room-section button{
+        width:100%;
+    }
+
+    .cell{
+        height:75px;
+    }
+}
